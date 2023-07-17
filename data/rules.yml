@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+- rule: Activate form
+  steps:
+  - intent: info_condition
+  - action: info_form
+  - active_loop: info_form
+
+
+- rule: Submit form
+  condition:
+  - active_loop: info_form
+  steps:
+  - action: info_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_info
+
+#- rule: Implementation of the Two-Stage-Fallback
+#  steps:
+#  - intent: nlu_fallback
+#  - action: action_two_stage_fallback
+#  - active_loop: action_two_stage_fallback

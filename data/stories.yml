@@ -1,0 +1,100 @@
+version: "3.1"
+
+stories:
+#- story: path 1
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: info_condition
+#    entities:
+#      - condition: "Mononucleosis"
+#  - action: action_info
+#  - slot_was_set:
+#      - condition: Colds and Flu
+#
+#
+#- story: path 2
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: info_condition
+#    entities:
+#      - condition: "Colds and Flu"
+#  - action: action_info
+#  - slot_was_set:
+#      - condition: Colds and Flu
+#  - intent: goodbye
+#  - action: utter_goodbye
+#
+#
+#- story: path 3
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: info_condition
+#    entities:
+#      - condition: "Mononucleosis"
+#  - action: action_info
+#  - slot_was_set:
+#      - condition: Colds and Flu
+#  - intent: info_condition
+#    entities:
+#      - condition: "Mononucleosis"
+#  - action: action_info
+#  - slot_was_set:
+#      - condition: Colds and Flu
+#  - intent: goodbye
+#  - action: utter_goodbye
+#
+#- story: path 4
+#  steps:
+#  - intent: info_condition
+#    entities:
+#      - condition: "Mononucleosis"
+#  - action: action_info
+#  - slot_was_set:
+#      - condition: Colds and Flu
+
+- story: interactive story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: info_condition
+  - action: info_form
+  - active_loop: info_form
+  - slot_was_set:
+    - requested_slot: condition
+  - slot_was_set:
+    - condition: Mononucleosis
+  - slot_was_set:
+      - requested_slot: infotype
+  - slot_was_set:
+      - infotype: Overview
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_info
+
+- story: interactive story
+  steps:
+  - intent: info_condition
+  - action: info_form
+  - active_loop: info_form
+  - slot_was_set:
+    - requested_slot: condition
+  - slot_was_set:
+    - condition: Mononucleosis
+  - slot_was_set:
+      - requested_slot: infotype
+  - slot_was_set:
+      - infotype: Overview
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_info
+
+- story: out_of_scope
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback
+

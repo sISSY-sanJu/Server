@@ -1,0 +1,346 @@
+version: "3.1"
+nlu:
+- intent: nlu_fallback
+  examples: |
+    - sflsjfi
+    - dbfjkbd jfj sjffo dfgjdn
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+    - Hello
+    - Howdy
+    - Greetings
+    - Hey, what's up?
+    - Yo
+    - Wassup?
+    - Hiya
+    - Hey, how's it going?
+    - Good to see you
+    - Hiya, mate
+    - What's crackin'?
+    - Hey, buddy
+    - Hey, folks
+    - Salutations
+    - Hola
+    - Bonjour
+    - Hey, howdy!
+    - Hey, there!
+    - Hi, friend
+    - Hello, bot
+    - Good day
+    - Hi, nice to meet you
+    - Hey, what's happening?
+    - G'day, mate
+    - Hey, beautiful
+    - Hi, how are you doing?
+    - Hey, sunshine
+    - Hey, partner
+    - Hi, lovely people
+    - Hey, good-lookin'!
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Goodbye
+    - Take care
+    - Farewell
+    - See you soon
+    - Until next time
+    - Peace out
+    - Catch you later
+    - Adios
+    - Have a great day
+    - So long
+    - Bye for now
+    - See you tomorrow
+    - Have a good one
+    - Take it easy
+    - Later, alligator
+    - Bye, take care
+    - Hasta luego
+    - See you next time
+    - Goodnight and sweet dreams
+    - Wishing you well
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - fantastic
+    - on top of the world
+    - ecstatic
+    - thrilled
+    - overjoyed
+    - delighted
+    - elated
+    - pumped up
+    - full of joy
+    - euphoric
+    - blissful
+    - feeling fantastic
+    - in a state of bliss
+    - couldn't be better
+    - beaming with happiness
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - feeling down
+    - miserable
+    - devastated
+    - heartbroken
+    - feeling low
+    - gloomy
+    - dejected
+    - upset
+    - frustrated
+    - down in the dumps
+    - disheartened
+    - sorrowful
+    - feeling blue
+    - overwhelmed with sadness
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - is this a bot?
+    - is this a human?
+    - are you an AI?
+    - are you real?
+    - am I chatting with a machine?
+    - am I chatting with a person?
+    - is there a real person behind this?
+    - is there an AI behind this?
+    - can you prove you're not a bot?
+    - can you prove you're human?
+    - are you a robot or a person?
+    - do you have feelings?
+    - do you have emotions?
+    - can you think?
+    - can you pass the Turing test?
+- intent: info_condition
+  examples: |
+    - need some [info]{"entity": "infotype", "value": "Overview"} on [allergies](condition)
+    - I have [allergies](condition) can you help?
+    - [allergies](condition), need help
+    - I think I have an [allergies](condition), what [can I do]{"entity": "infotype", "value": "Treatment"}?
+    - Can I get some help with [Conjunctivitis](condition)?
+    - My brother has [Conjunctivitis], how [can I help]{"entity": "infotype", "value": "Treatment"} him?
+    - What are the common [symptoms]{"entity": "infotype", "value": "Symptoms"} of [conjunctivitis](condition)?
+    - How is [Diarrhea](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
+    - What are the common [symptoms]{"entity": "infotype", "value": "Symptoms"} of [Mononucleosis](condition)?
+    - How is [Colds and Flu](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
+    - Can you explain the [causes]{"entity": "infotype", "value": "Causes"} of [allergies](condition)?
+    - What are some common [causes]{"entity": "infotype", "value": "Causes"} of [Conjunctivitis](condition)?
+    - Are there any effective [treatments]{"entity": "infotype", "value": "Treatment"} for [Conjunctivitis](condition)?
+    - How can I manage my [Mononucleosis](condition) on a daily basis?
+    - Are there any [natural remedies]{"entity": "infotype", "value": "Lifestyle and home remedies"} for alleviating [Headaches](condition) symptoms?
+    - What are the potential [complications]{"entity": "infotype", "value": "Complications"} of severe [Headaches](condition)?
+    - Can [Diarrhea](condition) be [prevented]{"entity": "infotype", "value": "Prevention"}?
+    - i NEED [INFO]{"entity": "infotype", "value": "Overview"} ON [cOLD AND fLU](condition)
+    - I need some help with [Conjunctivitis](condition)
+    - i NEED [INFO]{"entity": "infotype", "value": "Overview"} ON [Conjunctivitis](condition)
+    - I need [info]{"entity": "infotype", "value": "Overview"}.
+    - [Conjunctivitis](condition)
+    - I need some [info]{"entity": "infotype", "value": "Overview"} on [Gastroenteritis]{"entity": "condition", "value": "Diarrhea"}
+    - I need [info]{"entity": "infotype", "value": "Overview"} on [Pinkeye]{"entity": "condition", "value": "Conjunctivitis"}
+    - Can you provide an [overview]{"entity": "infotype", "value": "Overview"} of [allergies](condition)?
+    - Tell me about [Conjunctivitis](condition) and its [treatment]{"entity": "infotype", "value": "Treatment"}.
+    - What are the common [causes]{"entity": "infotype", "value": "Causes"} of [asthma](condition)?
+    - How is [pneumonia](condition) [diagnosed]{"entity": "infotype", "value": "Diagnosis"}?
+    - I need [info](infotype)
+    - [Absence seizure](condition)
+    - I need [info]{"entity": "infotype", "value": "Overview"} on [Achalasia](condition)
+    - [Achalasia](condition)
+    - [Acanthosis nigricans](condition)
+    - [Achilles tendinitis](condition)
+    - [Dermatitis](condition)
+    - [Dermatographia](condition)
+    - [Desmoid tumors](condition)
+    - [Mosquito bites](condition)
+    - [Retractile testicle](condition)
+    - [Spinal stenosis](condition)
+    - I need [info]{"entity": "infotype", "value": "Overview"} on [Yips](condition)
+- synonym: Overview
+  examples: |
+    - info
+    - INFO
+    - overview
+- synonym: Treatment
+  examples: |
+    - can I do
+    - can I help
+    - treatments
+    - treatment
+- synonym: Symptoms
+  examples: |
+    - symptoms
+- synonym: Diagnosis
+  examples: |
+    - diagnosed
+- synonym: Causes
+  examples: |
+    - causes
+- synonym: Lifestyle and home remedies
+  examples: |
+    - natural remedies
+- synonym: Complications
+  examples: |
+    - complications
+- synonym: Prevention
+  examples: |
+    - prevented
+- synonym: Diarrhea
+  examples: |
+    - Gastroenteritis
+    - Loose stools
+    - Runny bowels
+    - Watery bowel movements
+    - Diarrheal disease
+    - Bowel looseness
+    - Loose motions
+    - Stomach flu
+    - Enteritis
+    - Montezuma's revenge
+    - traveler's diarrhea
+- synonym: Conjunctivitis
+  examples: |
+    - Pinkeye
+    - Red eye
+    - Eye infection
+    - Infectious conjunctivitis
+    - Viral conjunctivitis
+    - Bacterial conjunctivitis
+    - Allergic conjunctivitis
+    - Chemical conjunctivitis
+    - Toxic conjunctivitis
+    - Irritant conjunctivitis
+- synonym: Colds and Flu
+  examples: |
+    - Common cold
+    - Upper respiratory infection
+    - URI
+    - Rhinovirus infection
+    - Influenza
+    - Seasonal flu
+    - Grippe
+    - Respiratory flu
+    - Viral respiratory infection
+    - Nasal congestion
+    - Flu-like illness
+- synonym: Headaches
+  examples: |
+    - Cephalalgia
+    - Migraine
+    - Tension headache
+    - Cluster headache
+    - Sinus headache
+    - Rebound headache
+    - Hormonal headache
+    - Thunderclap headache
+    - Exertional headache
+    - Sinusitis headache
+- synonym: Mononucleosis
+  examples: |
+    - Infectious mononucleosis
+    - Glandular fever
+    - Mono
+    - Pfeiffer's disease
+    - Epstein-Barr virus infection (EBV infection)
+    - Epstein-Barr virus-associated infectious mononucleosis
+    - Filatov's disease
+    - Kissing disease
+    - Mono-like syndrome
+- synonym: Stomach Aches
+  examples: |
+    - Abdominal pain
+    - Gastric distress
+    - Tummy ache
+    - Bellyache
+    - Upset stomach
+    - Dyspepsia
+    - Gastralgia
+    - Gastrointestinal discomfort
+    - Stomach cramps
+    - Indigestion
+    - Gastric irritation
+    - Gastrointestinal pain
+    - Colic
+    - Nausea
+    - Heartburn
+- synonym: allergies
+  examples: |
+    - Hypersensitivity reactions
+    - Sensitivities
+    - Allergic reactions
+    - Allergic conditions
+    - Allergic diseases
+    - Immune-mediated reactions
+    - Immunological hypersensitivity
+    - Allergic sensitization
+    - Atopic disorders
+    - Immunoglobulin E (IgE)-mediated reactions
+- lookup: condition
+  examples: |
+    - Colds and Flu
+    - Conjunctivitis
+    - Diarrhea
+    - Headaches
+    - Mononucleosis
+    - Stomach Aches
+    - allergies
+- lookup: infotype
+  examples: |
+    - Colds and Flu
+    - Conjunctivitis
+    - Diarrhea
+    - Headaches
+    - Mononucleosis
+    - Stomach Aches
+    - allergies
